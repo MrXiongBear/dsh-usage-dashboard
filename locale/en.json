@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Usage & Balance",
+    "description": "Shows API balance, estimated spend and daily/monthly/yearly token usage in the sidebar, and switches the default provider/model."
+  }
+}

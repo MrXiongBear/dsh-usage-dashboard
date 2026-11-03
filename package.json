@@ -1,0 +1,54 @@
+{
+  "name": "dsh-usage-dashboard",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "DSH 插件：侧边栏显示 API 余额、消费估算与峰谷时段，附完整用量仪表盘与服务商切换",
+  "author": "MrXiongBear",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MrXiongBear/dsh-usage-dashboard.git"
+  },
+  "homepage": "https://github.com/MrXiongBear/dsh-usage-dashboard#readme",
+  "bugs": {
+    "url": "https://github.com/MrXiongBear/dsh-usage-dashboard/issues"
+  },
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "cordis",
+    "plugin",
+    "usage",
+    "balance",
+    "dashboard"
+  ],
+  "scripts": {
+    "test": "node --test test/pricing.test.mjs"
+  },
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "README.md"
+  ],
+  "dsh": {
+    "bundle": { "patch": "./cordis.patch.yml" },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-sidebar",
+        "@deepseek-ai/dsh-client-ui-layout",
+        "@deepseek-ai/dsh-client-locale"
+      ]
+    }
+  }
+}
